@@ -1,0 +1,5 @@
+* {
+  transparent:  #00000000;
+  background:   #282839FF;
+  selected:     #7AA2F7FF;
+}
