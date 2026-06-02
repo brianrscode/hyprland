@@ -15,13 +15,10 @@ configuration {
 	me-select-entry:            "MouseSecondary";
     me-accept-entry:            "MousePrimary";
 	window-format:              "{w} · {c} · {t}";
-	dpi:						1;
-	// font: "Inter Medium 10";
-	font: "Mononoki Nerd Font 10";
+	dpi:                        1;
+	font: "JetBrinsMono Nerd Font 10";
 }
 
-/* ---- Load wallust colors ---- */
-// @theme "~/.config/rofi/colors-rofi.rasi"
 @theme "~/.config/qtile/rofi/colors-rofi.rasi"
 
 /* ---- Global Properties ---- */
@@ -55,7 +52,7 @@ window {
 
 /* ----- Main Box ----- */
 mainbox {
-	padding:					 0px;
+	padding:                    0px;
     enabled:                     true;
     orientation:                 vertical;
     children:                    [ "entry" ];
@@ -71,8 +68,6 @@ inputbar {
     border-radius:               25px;
     orientation:                 horizontal;
     children:                    ["entry"];
-    background-image:            url("~/wallpapers/0anime10.png", width);
-    // background-image:            url("~/.config/rofi/.current_wallpaper", width);
 }
 
 /* ---- Entry input ---- */
@@ -220,7 +215,7 @@ element-text {
     vertical-align:              0.5;
     horizontal-align:            0.0;
     // font:	"Inter Medium 11";
-    font:	"Mononoki Nerd Font 10";
+    font:	"JetBrinsMono Nerd Font 10";
 }
 
 /* ---- Message ---- */
