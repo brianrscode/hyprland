@@ -47,3 +47,9 @@ hl.window_rule({
 -- 	move = "20 monitor_h-120",
 -- 	float = true,
 -- })
+
+hl.layer_rule({
+	name = "notification-animations",
+	match = { namespace = "swaync-control-center" },
+	animation = "slide right",
+})
