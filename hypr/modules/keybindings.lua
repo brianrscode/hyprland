@@ -6,7 +6,7 @@
 local terminal = "kitty"
 local fileManager = "thunar"
 -- local menu = "rofi -show drun"
-local menu = "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/rofi/launcher/launcher.rasi"
+local menu = "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/hypr/rofi/launcher/launcher.rasi"
 
 ---------------------
 ---- KEYBINDINGS ----
