@@ -28,7 +28,7 @@
 window {
     background-color: @background;
     border:           0;
-    padding:          5;    
+    padding:          5;
     width: 8em;
 }
 mainbox {

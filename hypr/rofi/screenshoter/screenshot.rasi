@@ -1,0 +1,100 @@
+configuration {
+	hover-select:               true;
+	me-select-entry:            "";
+	me-accept-entry:            "MousePrimary";
+}
+
+@import "shared.rasi"
+
+window {
+    transparency:                "real";
+    location:                    North;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       300px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      1px solid;
+    border-radius:               20px;
+    border-color:                @selected;
+    cursor:                      "default";
+    background-color:            @background;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     10px;
+    background-color:            transparent;
+    children:                    [ "message", "listview" ];
+}
+
+// Estilos del directory ---------------------------------------------
+message {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+textbox {
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+// -------------------------------------------------------------------
+
+listview {
+    enabled:                     true;
+    columns:                     5;
+    lines:                       1;
+    cycle:                       true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    spacing:                     5px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+element {
+    enabled:                     true;
+    padding:                     6px 9px 6px 1px;
+    border:                      0px solid;
+    border-radius:               20px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element-text {
+    font:                        "JetbrainsMono NF Bold 15";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+element normal.normal,
+element alternate.normal {
+    border:                      1px solid;
+    border-radius:               20px;
+    border-color:                @selected;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+
+// Icono seleccionado
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @background;
+}
