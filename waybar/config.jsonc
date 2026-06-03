@@ -77,7 +77,6 @@
     "format": " {usage}%",
     "tooltip": true,
     "interval": 1,
-    "on-click": "sleep 0.1 && btm"
   },
   "memory": {
     "format": " {used:0.1f}Gi",
@@ -97,7 +96,7 @@
   },
   "custom/power": {
     "tooltip": false,
-    "on-click": "logout",
+    "on-click": "source ~/.config/hypr/scripts/powermenu.sh",
     "format": "⏻",
   },
   "custom/notification": {
