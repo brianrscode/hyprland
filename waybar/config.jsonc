@@ -77,6 +77,8 @@
     "format": " {usage}%",
     "tooltip": true,
     "interval": 1,
+    "format-alt-click": "click",
+    "on-click": "kitty --title btm sh -c 'btm'"
   },
   "memory": {
     "format": " {used:0.1f}Gi",
@@ -113,3 +115,6 @@
     "tooltip": false,
   },
 }
+
+
+
