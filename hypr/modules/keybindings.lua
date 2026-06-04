@@ -5,8 +5,8 @@
 -- Set programs that you use
 local terminal = "kitty"
 local fileManager = "thunar"
--- local menu = "rofi -show drun"
 local menu = "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/hypr/rofi/launcher/launcher.rasi"
+local browser = "firefox"
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -31,8 +31,10 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/.config/hypr/scripts/clipboard.sh"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/search_bar.sh"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper_select.sh"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 -- hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("python ~/.config/hypr/scripts/wallpaper.py"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshoter.sh"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/screen_clipping.sh"))
+hl.bind("PRINT", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshoter.sh"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))

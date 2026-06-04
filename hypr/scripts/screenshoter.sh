@@ -1,7 +1,7 @@
 #!/bin/sh
 
 timestamp=$(date +%Y-%m-%d-%H%M%S)
-dir="Pictures/ScreenShots"
+dir="$HOME/Pictures/ScreenShots"
 filename="$dir/shot-${timestamp}.png"
 tmpfile="${XDG_RUNTIME_DIR:-/tmp}/screenshoter-${timestamp}.png"
 
