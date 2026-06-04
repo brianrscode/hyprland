@@ -8,8 +8,8 @@ tmpfile="${XDG_RUNTIME_DIR:-/tmp}/screenshoter-${timestamp}.png"
 [ -d "$dir" ] || mkdir -p "$dir"
 
 # Rofi options
-s_full=""
 s_select="󰹑"
+s_full=""
 s_in3="󰔝"
 s_all="󰍹"
 
@@ -57,7 +57,7 @@ rofi_cmd() {
 }
 
 run_rofi() {
-    printf "%s\n%s\n%s\n%s\n" "$s_full" "$s_select" "$s_in3" "$s_all" | rofi_cmd
+    printf "%s\n%s\n%s\n%s\n" "$s_select" "$s_full" "$s_in3" "$s_all" | rofi_cmd
 }
 
 show_result() {
@@ -88,18 +88,30 @@ take_screenshot() {
             geometry=$(get_current_monitor_geometry)
             [ -n "$geometry" ] && grim -g "$geometry" "$tmpfile"
         fi
+
+        if [ -e "$tmpfile" ]; then
+            open_swappy
+        else
+            notify "Screenshot canceled" user-trash
+        fi
         ;;
     select)
         geometry=$(slurp)
         [ -n "$geometry" ] && grim -g "$geometry" "$tmpfile"
+        if [ -e "$tmpfile" ]; then
+            wl-copy --type image/png <"$filename"
+            notify "Screenshot saved an copied to clipboard" "$filename" "1500"
+        else
+            notify "Screenshot canceled" user-trash
+        fi
         ;;
     esac
 
-    if [ -e "$tmpfile" ]; then
-        open_swappy
-    else
-        notify "Screenshot canceled" user-trash
-    fi
+    # if [ -e "$tmpfile" ]; then
+    #     open_swappy
+    # else
+    #     notify "Screenshot canceled" user-trash
+    # fi
 }
 
 countdown() {
