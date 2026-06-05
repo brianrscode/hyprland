@@ -31,6 +31,14 @@ hl.window_rule({
 	no_focus = true,
 })
 
+-- hl.window_rule({
+-- 	match = {
+-- 		class = "",
+-- 	},
+-- 	size = { 100, 900 },
+-- 	float = true,
+-- })
+
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({
 --     name  = "no-anim-overlay",

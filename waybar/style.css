@@ -16,7 +16,7 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0.0rem 0.6rem;
+  padding: 0rem 0.6rem;
   margin: 0.4rem 0.25rem;
   border-radius: 6px;
   /* background-color: #181825; */
@@ -39,6 +39,9 @@ window#waybar {
   color: #f38ba8;
 }
 
+#custom-media-animation,
+#custom-media-now-playing,
+#custom-media-time,
 #clock,
 #pulseaudio,
 #custom-logo,
@@ -49,7 +52,10 @@ window#waybar {
 #tray,
 #memory,
 #window,
-#mpris {
+#mpris,
+#battery,
+#bluetooth,
+#network {
   padding: 0.3rem 0.6rem;
   margin: 0.4rem 0.25rem;
   border-radius: 6px;
@@ -83,7 +89,7 @@ window#waybar.empty #window {
 }
 
 #clock {
-  color: #74c7ec;
+  color: #cba6f7;
 }
 
 #clock.simpleclock {
@@ -113,4 +119,33 @@ window#waybar.empty #window {
 tooltip {
   background-color: #181825;
   border: 2px solid #89b4fa;
+}
+
+#media {
+  color: #a6e3a1;
+}
+
+#custom-media-animation {
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+#custom-media-now-playing {
+  margin-right: 10px;
+  color: #ff00ff;
+}
+
+#custom-media-time {
+  color: rgba(200, 200, 200, 0.6);
+  font-size: 12px;
+}
+
+#battery {
+  color: #a6e3a1;
+}
+#bluetooth {
+  color: #74c7ec;
+}
+#network {
+  color: #8be9fd;
 }

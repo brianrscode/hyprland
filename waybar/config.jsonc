@@ -7,7 +7,8 @@
   "gtk-layer-shell": true,
   "passthrough": false,
   "fixed-center": true,
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  // "modules-left": ["hyprland/workspaces", "hyprland/window", "group/media"],
+  "modules-left": ["hyprland/workspaces", "group/media"],
   "modules-center": ["mpris"],
   "modules-right": [
     "cpu",
@@ -16,9 +17,13 @@
     "clock",
     "clock#simpleclock",
     "tray",
+    "battery",
+    "bluetooth",
+    "network",
     "custom/notification",
     "custom/power",
   ],
+
   "custom/spotify": {
     "format": "  {}",
     "return-type": "json",
@@ -39,6 +44,7 @@
       "default": "",
     },
   },
+
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{id}",
@@ -56,6 +62,35 @@
   "clock#simpleclock": {
     "tooltip": false,
     "format": " {:%H:%M}",
+  },
+  "battery": {
+    "interval": 60,
+    "format": "{capacity}% {icon}",
+    "format-icons": {
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+    },
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "exec ghostty --title=bluetui -e bluetui",
+  },
+  "network": {
+    "format": "",
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-disconnected": "󰤭", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "󰖪",
+    "max-length": 50,
+    "on-click": "exec nmrs",
   },
   "clock": {
     "format": " {:L%a %d %b}",
@@ -78,7 +113,7 @@
     "tooltip": true,
     "interval": 1,
     "format-alt-click": "click",
-    "on-click": "kitty --title btm sh -c 'btm'"
+    "on-click": "kitty --title btm sh -c 'btm'",
   },
   "memory": {
     "format": " {used:0.1f}Gi",
@@ -114,7 +149,31 @@
     "return-type": "json",
     "tooltip": false,
   },
+
+  "group/media": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/media-animation",
+      "custom/media-now-playing",
+      "custom/media-time",
+    ],
+  },
+  "custom/media-now-playing": {
+    "exec": "~/.config/waybar/custom_modules/media/media-now-playing.sh",
+    "escape": true,
+    "tooltip": false,
+    "on-click": "playerctl play-pause",
+    "on-click-middle": "playerctl previous",
+    "on-click-right": "playerctl next",
+  },
+  "custom/media-animation": {
+    "exec": "~/.config/waybar/custom_modules/media/media-animation.sh",
+    "tooltip": false,
+  },
+  "custom/media-time": {
+    "exec": "~/.config/waybar/custom_modules/media/media-time.sh",
+    "escape": true,
+    "interval": 1,
+    "tooltip": false,
+  },
 }
-
-
-
