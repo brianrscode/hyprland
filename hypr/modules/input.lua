@@ -4,8 +4,8 @@
 
 hl.config({
 	input = {
-		kb_layout = "es",
-		kb_variant = "",
+		kb_layout = "latam",
+		kb_variant = ",qwerty",
 		kb_model = "",
 		kb_options = "grp:alt_shift_toggle",
 		kb_rules = "",
